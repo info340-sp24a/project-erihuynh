@@ -4,3 +4,4 @@ This repository contains code for an interactive information web app, created fo
 
 Emily's initial commit :)
 Erica's initial commit :3
+Madelyn's initial commit -3-
