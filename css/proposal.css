@@ -1,0 +1,17 @@
+.main-header h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.flex-container {
+    display: flex;
+    background-color: beige;
+}
+
+.app-description h2 {
+    text-align: center;
+}
+
+.app-description ul li {
+    padding: 10px 0;
+}
