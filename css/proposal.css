@@ -5,7 +5,13 @@
 
 .flex-container {
     display: flex;
-    background-color: beige;
+    background-color: rgb(215, 229, 243);
+    flex-direction: column;
+}
+
+.flex-container p {
+    max-width: 800px;
+    margin-bottom: 10px;
 }
 
 .app-description h2 {
