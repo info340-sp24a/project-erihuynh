@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.headerFooter {
+    background-color: #4E4D95;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navBarLabels {
+    margin: 0;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 1.25em;
+}
+
+.characterName {
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+.mainContent h1 {
+    font-size: 4em;
+    margin-top: 0.25em;
+    margin-bottom: 0;
+}
+
+.contentBox {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.customBtn {
+    width: 150px;
+    margin-bottom: 2em;
+    color: white;
+    background-color: #4E4D95;
+}
+
+@media (min-width: 992px) {
+    .headerFooter {
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1em;
+    }
+    
+    .navBarLabels {
+        padding: 2em;
+        margin-left: 10em;
+        margin-right: 10em;
+        font-weight: normal;
+    }
+
+    .characterName {
+        font-weight: normal;
+        font-size: 1em;
+    }
+
+    .mainContent {
+        font-size: 1em;
+    }
+
+    .mainContent h1 {
+        /* font-size: 4em; */
+        font-weight: normal;
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+    }
+
+    .characterName {
+        margin-top: 2em;
+        margin-bottom: 1.5em;
+    }
+
+    .contentBox {
+        border-style: solid;
+        border-width: 3px;
+        border-color: #4E4D95;
+        border-radius: 30px;
+        width: 50%;
+        padding: 3em;
+    }
+
+    .footer {
+        margin-top: 5em;
+    }
+}
