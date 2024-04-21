@@ -51,6 +51,12 @@ h1, h2 {
     margin-bottom: 0.5em;
 }
 
+h3 {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+}
+
 p {
     font-family: 'Poppins', Helvetica, sans-serif;
 }
