@@ -135,6 +135,11 @@ form {
     p {
         font-size: 0.7em;
     }
+    
+    .contentText {
+        width: 20em;
+        height: 3.5em;
+    }
 }
 
 /* createQuiz.html CSS */
