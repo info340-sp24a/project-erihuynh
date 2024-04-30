@@ -29,23 +29,21 @@
         <div class="quizInfo">
             <form>
                 <div class="form-group">
-                <label for="quizTitle">Title</label>
-                <input type="title" class="form-control" id="exampleQuizTitle" placeholder="Enter quiz title">
+                    <label for="quizTitle" >Title</label>
+                    <input type="title" class="form-control" id="exampleQuizTitle" placeholder="Enter quiz title">
                 </div>
-                <div class="mb-3">
-                    <label for="quizDescription" class="form-label">Description</label>
-                    <textarea class="form-control" id="exampleQuizDescription" rows="3"></textarea>
-                </div>
-            </form>
         </div>
 
-        <div class="quizQuestion">
-            <form>
+        <div class="mb-3">
+            <label for="quizDescription" class="form-label">Description</label>
+            <textarea class="form-control" id="exampleQuizDescription" rows="3"></textarea>
+        </div>
+
+        <div class="quizQuestion" id="q1">
                 <div class="form-group">
                 <label for="quizQuestion">Question 1</label>
                 <input type="quizQuestion" class="form-control" id="exampleQuizQ1" placeholder="Enter a question">
                 </div>
-            </form>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Add an image for this question:</label>
                 <input class="form-control" type="file" id="formFile">
@@ -68,13 +66,11 @@
             </div>          
         </div>
 
-        <div class="quizQuestion">
-            <form>
+        <div class="quizQuestion" id="q2">
                 <div class="form-group">
                 <label for="quizQuestion">Question 2</label>
                 <input type="quizQuestion" class="form-control" id="exampleQuizQ2" placeholder="Enter a question">
                 </div>
-            </form>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Add an image for this question:</label>
                 <input class="form-control" type="file" id="formFile">
@@ -97,13 +93,11 @@
             </div>          
         </div>
 
-        <div class="quizQuestion">
-            <form>
+        <div class="quizQuestion" id="q3">
                 <div class="form-group">
                 <label for="quizQuestion">Question 3</label>
                 <input type="quizQuestion" class="form-control" id="exampleQuizQ3" placeholder="Enter a question">
                 </div>
-            </form>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Add an image for this question:</label>
                 <input class="form-control" type="file" id="formFile">
@@ -126,13 +120,11 @@
             </div>          
         </div>
 
-        <div class="quizQuestion">
-            <form>
+        <div class="quizQuestion" id="q4">
                 <div class="form-group">
                 <label for="quizQuestion">Question 4</label>
                 <input type="quizQuestion" class="form-control" id="exampleQuizQ4" placeholder="Enter a question">
                 </div>
-            </form>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Add an image for this question:</label>
                 <input class="form-control" type="file" id="formFile">
@@ -155,13 +147,11 @@
             </div>          
         </div>
 
-        <div class="quizQuestion">
-            <form>
+        <div class="quizQuestion" id="q5">
                 <div class="form-group">
                 <label for="quizQuestion">Question 5</label>
                 <input type="quizQuestion" class="form-control" id="exampleQuizQ5" placeholder="Enter a question">
                 </div>
-            </form>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Add an image for this question:</label>
                 <input class="form-control" type="file" id="formFile">
@@ -183,19 +173,23 @@
                 <input type="text" class="form-control" id="option4">
             </div>          
         </div>
-        
-        </div>
+
+        <div id="qContainer"></div>
+        <button id="addQuestionBtn" class="btn btn-outline-secondary">Add New Question</button>
 
         <div class="submitButton">
-            <form>
                 <button type="submit" class="btn customBtn">Submit</button>
-            </form>
         </div>
+    </form>
+</div>
 
         <div class="headerFooter footer">
             <p class="navBarLabels">Logo</p>
             <p class="navBarLabels">Thank you for visiting!</p>
         </div>
 
+        
+
+        <script src="js/createQuiz.js"></script>
 </body>
 </html>
