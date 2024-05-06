@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" type="image/x-icon" href="img/faviconMiffy.png">
     <meta name="description" content="A page that displays the user's profile with a list of past quizzes they have taken and past quizzes they have made.">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
@@ -14,10 +14,24 @@
 </head>
 
 <body>
-    <div class="headerFooter">
-        <p class="navBarLabels">Home</p>
-        <p class="navBarLabels">Sign in</p>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Persona Playground</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              <a class="nav-link" href="createQuiz.html">Create Quiz</a>
+              <a class="nav-link" href="profile.html">Profile</a>
+            </div>
+          </div>
+          <div class="navbar-nav ml-auto">
+            <a class="nav-link" href="#">Sign In</a> 
+        </div>
+        </div>
+    </nav>
 
     <div class="mainContent">
         
@@ -99,10 +113,23 @@
         </div>
     </div>
         
-    <div class="headerFooter footer">
-        <p class="navBarLabels">Logo</p>
-        <p class="navBarLabels">Thank you for visiting!</p>
-    </div>
+    <footer class="pt-3 mt-4 footer-custom">
+        <ul class="nav justify-content-center border-bottom gray-border pb-3 mb-3">
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2" style="color: white;">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2" style="color: white;">Create Quiz</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2" style="color: white;">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2" style="color: white;">Sign in</a>
+            </li>
+        </ul>
+        <p class="text-center">made with love by Emily, Erica, Madelyn & Ryan</p>
+    </footer>
     
 </body>
 
