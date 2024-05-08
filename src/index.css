@@ -1,3 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .navbar-custom {
     background-color: #4E4D95;
 }
@@ -10,4 +18,276 @@
 footer p {
     font-size: 0.8em;
     padding: 1.5em;
+    margin-bottom: 0;
 }
+
+.gray-border {
+    border-color: gray;
+}
+
+.navBarLabels {
+    margin: 0;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 1.25em;
+}
+
+.characterName {
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+h1, h2 {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-weight: 700;
+    font-size: 3.5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.quizHeader {
+    margin-bottom: 0;
+}
+
+p {
+    font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+.questionLabel {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.home-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin: 6em;
+}
+
+.home-main-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4em;
+    margin-bottom: 1em;
+}
+
+form {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 2.5em;
+  }
+
+.createForm {
+    display: block;
+    text-align: center;
+}
+
+.contentText {
+    margin-bottom: 3em;
+    display: flex;
+    align-items: flex-start;
+    width: 28em;
+    height: 3.5em;
+    color: black;
+    font-size: 1em;
+    word-wrap: break-word;
+  }
+
+.contentBox {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.customBtn {
+    width: 150px;
+    margin-bottom: 2em;
+    color: white;
+    background-color: #4E4D95;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.user-image {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.text-container {
+    margin-left: 10px; 
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.7em;
+    }
+    
+    .contentText {
+        width: 20em;
+        height: 3.5em;
+    }
+}
+
+/* createQuiz.html CSS */
+@media (max-width: 768px) {
+    .quizInfo, .quizQuestion, .submitButton {
+        margin: 1.25rem;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    .quiz {
+        text-align: center;
+    }
+    
+    p {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 992px) {
+    .headerFooter {
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1em;
+    }
+    
+    .navBarLabels {
+        padding: 2em;
+        margin-left: 10em;
+        margin-right: 10em;
+        font-weight: normal;
+    }
+
+    /* results.html CSS */
+    .characterName {
+        font-weight: normal;
+        font-size: 1em;
+    }
+
+    .mainContent {
+        font-size: 1em;
+    }
+
+    .mainContent h1 {
+        font-size: 5em;
+        font-weight: normal;
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    h3 {
+        font-size: 2.5em;
+    }
+
+    .mainContent .quizHeader {
+        margin-bottom: 0;
+    }
+
+    .characterName {
+        margin-top: 2em;
+        margin-bottom: 1.5em;
+    }
+
+    .contentBox {
+        border-style: solid;
+        border-width: 3px;
+        border-color: #4E4D95;
+        border-radius: 30px;
+        width: 50%;
+        padding: 3em;
+        margin: 2em;
+    }
+
+    .contentBoxCreateQuiz {
+        border-style: solid;
+        border-width: 3px;
+        border-color: #4E4D95;
+        border-radius: 30px;
+        padding: 3em;
+    }
+
+    .footer {
+        margin-top: 5em;
+    }
+
+    .contentBoxCreateQuiz {
+        margin-left: 21.5em;
+        margin-right: 21.5em;
+        align-items: center;
+    }
+}
+
+label[for="quizQuestion"], label[for="quizTitle"], label[for="quizDescription"] {
+    font-weight: bold;
+}
+
+.quizQuestion {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.submitButton {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+

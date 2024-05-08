@@ -1,13 +1,10 @@
 import React from 'react';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { TakeQuiz } from './components/TakeQuiz';
 
 function App() {
   return (
     <div>
-      <Header />
-      <p>Some content</p>
-      <Footer />
+      <TakeQuiz />
     </div>
   );
 }
