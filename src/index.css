@@ -1,0 +1,13 @@
+.navbar-custom {
+    background-color: #4E4D95;
+}
+
+.footer-custom {
+    background-color: #4E4D95;
+    color: white;
+}
+
+footer p {
+    font-size: 0.8em;
+    padding: 1.5em;
+}

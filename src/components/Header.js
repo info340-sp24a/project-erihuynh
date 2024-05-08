@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export function Header() {
+    const [activeLink, setActiveLink] = useState('home');
+    const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+    
+    const handleClick = (link) => {
+        setActiveLink(link);
+    };
+    
+    const handleNavCollapse = () => {
+        setIsNavCollapsed(!isNavCollapsed);
+    };
+
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-                <div class="container-fluid">
-                <a class="navbar-brand" href="#">Persona Playground</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    <a class="nav-link" href="createQuiz.html">Create Quiz</a>
-                    <a class="nav-link" href="profile.html">Profile</a>
+            <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
+                <div className="container-fluid">
+                    <a className={`navbar-brand ${activeLink === 'home' ? 'active' : ''}`} href="#" onClick={() => handleClick('home')}>Persona Playground</a>
+                    <button className="navbar-toggler" type="button" onClick={handleNavCollapse} aria-controls="navbarNavAltMarkup" aria-expanded={!isNavCollapsed} aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            <a className={`nav-link ${activeLink === 'home' ? 'active' : ''}`} href="#" onClick={() => handleClick('home')}>Home</a>
+                            <a className={`nav-link ${activeLink === 'create-quiz' ? 'active' : ''}`} href="#" onClick={() => handleClick('create-quiz')}>Create Quiz</a>
+                            <a className={`nav-link ${activeLink === 'profile' ? 'active' : ''}`} href="#" onClick={() => handleClick('profile')}>Profile</a>
+                        </div>
+                        <div className="navbar-nav ml-auto">
+                            <a className={`nav-link ${activeLink === 'signin' ? 'active' : ''}`} href="#" onClick={() => handleClick('signin')}>Sign In</a>
+                        </div>
                     </div>
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-link" href="#">Sign In</a> 
-                </div>
                 </div>
             </nav>
         </div>
