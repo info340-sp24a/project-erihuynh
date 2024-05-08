@@ -1,6 +1,14 @@
+import React from 'react';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+
 function App() {
   return (
-    <h1>I made my first react app for my project!</h1>
+    <div>
+      <Header />
+      <p>Some content</p>
+      <Footer />
+    </div>
   );
 }
 
