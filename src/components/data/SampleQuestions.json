@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "text": "You are transported to the Studio Ghibli Film Totoro. What's the first thing you think about?",
+      "options": [
+        { "text": "I can't wait to meet totoro and all his friends!", "score": {"E": 2} },
+        { "text": "I wonder who I'll meet first", "score": {"E": 1} },
+        { "text": "That hill looks like a nice place to take a nap", "score": {"I": 1} },
+        { "text": "I hope no one else came here with me. I really want to enjoy my time peacefully", "score": {"I": 2} }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You come across a vast field of grass with blue skies overhead",
+      "options": [
+        { "text": "Lay down on the comfortable grass in front of you and let you mind wander as you think about the magical things that could happen", "score": {"N": 2} },
+        { "text": "Look for a comfortable place to sit and wonder what your future will look like now that you're in this new world", "score": {"N": 1} },
+        { "text": "Start searching your surroundings for helpful tools that could keep you safe or take you back home", "score": {"S": 2} },
+        { "text": "Take a walk across the field and look for clues as to why you were transported here", "score": {"S": 1} }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You encounter a lost creature that resembles a smaller version of Totoro. How do you approach this situation?",
+      "options": [
+        { "text": "You carefully analyze the creature's behavior and surroundings to understand its needs logically.", "score": {"T": 2} },
+        { "text": "You immediately feel a strong sense of empathy towards the creature and prioritize comforting and nurturing it.", "score": {"F": 2} },
+        { "text": "You cautiously observe the creature from a distance, trying to assess the situation before deciding on a course of action.", "score": {"T": 1} },
+        { "text": "You approach the creature with open arms, eager to connect with it emotionally and provide immediate support.", "score": {"F": 1} }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You find a mysterious path leading deeper into the forest where you first encountered Totoro. What do you do next?",
+      "options": [
+        { "text": "You devise a detailed plan to explore the path, mapping out your journey and setting specific goals for what you hope to discover.", "score": {"J": 2} },
+        { "text": "You feel excited and intrigued by the unknown and decide to follow the path spontaneously, embracing the adventure without a strict plan.", "score": {"P": 2} },
+        { "text": "You carefully observe the surroundings and ponder the potential significance of the path before making a thoughtful decision on whether to explore further.", "score": {"J": 1} },
+        { "text": "You eagerly venture down the path, eager to discover what magical surprises await you along the way.", "score": {"P": 1} }
+      ]
+    }
+  ]

@@ -62,8 +62,23 @@ h3 {
     font-size: 1em;
 }
 
-.quizHeader {
-    margin-bottom: 0;
+.quiz-header {
+    margin: 40px 50px 10px 50px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.quiz-description {
+    text-align: center;
+}
+
+.quiz-question {
+    font-size: larger;
+    background-color: black;
+}
+
+.question-options {
+    font-style: italic;
 }
 
 p {
@@ -71,8 +86,17 @@ p {
 }
 
 .questionLabel {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.radio-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 5px; /* Adjust spacing between radio button and label */
 }
 
 .home-main-content {
@@ -105,7 +129,7 @@ form {
 
 .createForm {
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
 .contentText {

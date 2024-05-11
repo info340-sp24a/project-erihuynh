@@ -7,9 +7,7 @@ export function TakeQuiz() {
     return (
         <div>
             <Header />
-            <div>
-                <Quiz />
-            </div>
+            <Quiz />
             <Footer />
         </div>
     );
