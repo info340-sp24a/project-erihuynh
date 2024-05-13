@@ -6,11 +6,29 @@ body {
     min-height: 100vh;
 }
 
-.navbar-custom {
+h1, h2 {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-weight: 700;
+    font-size: 3.5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+p {
+    font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+.navbarCustom {
     background-color: #4E4D95;
 }
 
-.footer-custom {
+.footerCustom {
     background-color: #4E4D95;
     color: white;
 }
@@ -19,7 +37,7 @@ footer p {
     font-size: 0.8em;
 }
 
-.gray-border {
+.grayBorder {
     border-color: gray;
 }
 
@@ -46,26 +64,8 @@ footer p {
     margin-bottom: 0;
 }
 
-h1, h2 {
-    font-family: 'M Plus Rounded 1c', sans-serif;
-    font-weight: 700;
-    font-size: 3.5em;
-    margin-top: 0.25em;
-    margin-bottom: 0.5em;
-}
-
-h3 {
-    font-family: 'M Plus Rounded 1c', sans-serif;
-    font-weight: 500;
-    font-size: 1em;
-}
-
 .quizHeader {
     margin-bottom: 0;
-}
-
-p {
-    font-family: 'Poppins', Helvetica, sans-serif;
 }
 
 .questionLabel {
@@ -73,7 +73,7 @@ p {
     margin-bottom: 0.5em;
 }
 
-.home-main-content {
+.homeMainContent {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -81,7 +81,7 @@ p {
     margin: 6em;
 }
 
-.home-main-content h2 {
+.homeMainContent h2 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
 }
@@ -123,7 +123,7 @@ form {
     flex-direction: column;
 }
 
-.card-img-top {
+.cardImgTop {
     width: 100%;
     height: 15vw;
     object-fit: cover;
@@ -141,17 +141,17 @@ form {
     background-color: #4E4D95;
 }
 
-.flex-container {
+.flexContainer {
     display: flex;
     align-items: center;
 }
 
-.user-image {
+.userImage {
     max-width: 200px;
     max-height: 200px;
 }
 
-.text-container {
+.textContainer {
     margin-left: 10px; 
 }
 
@@ -180,6 +180,10 @@ form {
 
 /* createQuiz.html CSS */
 @media (max-width: 768px) {
+    p {
+        font-size: 0.8em;
+    }
+    
     .quizInfo, .quizQuestion, .submitButton {
         margin: 1.25rem;
     }
@@ -192,12 +196,18 @@ form {
         text-align: center;
     }
     
-    p {
-        font-size: 0.8em;
-    }
+    
 }
 
 @media (min-width: 992px) {
+    h2 {
+        font-size: 3em;
+    }
+
+    h3 {
+        font-size: 2.5em;
+    }
+
     .headerFooter {
         flex-direction: row;
         justify-content: space-between;
@@ -226,14 +236,6 @@ form {
         font-weight: normal;
         margin-top: 1.25em;
         margin-bottom: 1.25em;
-    }
-
-    h2 {
-        font-size: 3em;
-    }
-
-    h3 {
-        font-size: 2.5em;
     }
 
     .mainContent .quizHeader {
