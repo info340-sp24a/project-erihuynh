@@ -1,10 +1,12 @@
 import React from 'react';
 import { TakeQuiz } from './components/TakeQuiz';
+import { Home } from './components/Home';
 
 function App() {
   return (
     <div>
-      <TakeQuiz />
+      <Home />
+      {/* <TakeQuiz /> */}
     </div>
   );
 }
