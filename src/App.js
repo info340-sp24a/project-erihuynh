@@ -6,9 +6,9 @@ import { Results } from './components/Results';
 function App() {
   return (
     <div>
-      {/* <Home /> */}
+      <Home />
       {/* <TakeQuiz /> */}
-      <Results />
+      {/* <Results /> */}
     </div>
   );
 }

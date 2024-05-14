@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CardList } from './QuizCards';
+
 export function HomeHeader(props) {
     
     const handleClick = event => {
@@ -7,7 +9,7 @@ export function HomeHeader(props) {
     }
     
     return (
-        <div className="home-main-content">
+        <div className="homeMainContent">
             <h1 className="homeHeader">Welcome to Persona Playground</h1>
             <div className="contentText">
                 <p>This is an interactive playground where you can create your own persona quizzes, take other users' quizzes, and save them to your profile! Click on any quiz to start~</p>
@@ -24,6 +26,7 @@ export function HomeHeader(props) {
                     <button type="submit">Search</button>
                 </form>
             </div>
+            <CardList />
         </div>
     );
 }
