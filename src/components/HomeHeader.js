@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { CardList } from './QuizCards';
+import { SearchForm } from './SearchForm';
 
 export function HomeHeader(props) {
     
@@ -18,14 +19,7 @@ export function HomeHeader(props) {
             <div className="buttonContainer">
                 <button type="button" className="btn customBtn" onClick={handleClick}>Create a Quiz</button>
             </div>
-
-            <div className="searchContainer">
-                <h2>Begin Your Search</h2>
-                <form id="form">
-                    <input type="search" id="query" name="q" placeholder="Search quizzes..." aria-label="Search through personality/persona quizzes" />
-                    <button type="submit">Search</button>
-                </form>
-            </div>
+            <SearchForm />
             <CardList />
         </div>
     );
