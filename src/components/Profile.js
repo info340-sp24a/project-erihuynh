@@ -25,11 +25,17 @@ function UserInfo({ userName, userEmail, userNumber }) {
     );
 }
 
-export function PastQuizzes({results}) {
-
+export function PastQuizzes({ results, cardInfo }) {
     return (
         <div className="d-flex align-items-center">
-            <QuizCard />
+            {cardInfo.map((card, index) => (
+                <QuizCard 
+                    key={index}
+                    quizTitle={card.quizTitle}
+                    quizDesc={card.quizDesc}
+                    imgURL={card.imgURL}
+                />
+            ))}
             {results.map((result, index) => (
                 <div key={index} className="contentBox mx-auto">
                     <p className="characterName">{result.resultTitle}</p>
@@ -37,7 +43,7 @@ export function PastQuizzes({results}) {
                 </div>
             ))}
         </div>
-    )
+    );
 }
 
 export function Profile() {
@@ -46,10 +52,14 @@ export function Profile() {
     ];
 
     const results = [
-        { resultTitle: "Pompompurin", resultDesc: "Pompompurin is a character known for his endearing and gentle personality. He is friendly and caring like a golden retriever who loves to make others happy. He always wears his little brown beret on top of his head. He loves drinking milk and eating cream caramel pudding. His favorite words are 'let's go out' His least favorite word is 'stay'"},
+        { resultTitle: "Pompompurin", resultDesc: "Pompompurin is a character known for his endearing and gentle personality. He is friendly and caring like a golden retriever who loves to make others happy. He always wears his little brown beret on top of his head. He loves drinking milk and eating cream caramel pudding. His favorite words are 'let's go out' His least favorite word is 'stay'"},
     ];
 
-        return (
+    const cardInfo = [
+        { quizTitle: "who's your sanrio persona?", quizDesc: "inspired by the sanrio characters", imgURL: "img/results.png" },
+    ];
+
+    return (
         <div>
             <Header />
             <div className="profileMainContent">
@@ -63,7 +73,7 @@ export function Profile() {
                 ))}
                 <div className="container mb-5">
                     <h1>Past Quizzes</h1>
-                    <PastQuizzes results={results} />
+                    <PastQuizzes results={results} cardInfo={cardInfo} />
                 </div>
                 <div className="container mb-5">
                     <h1>Your Quizzes</h1>
