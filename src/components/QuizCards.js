@@ -36,3 +36,26 @@ export function QuizCard(props) {
         </div>
     )
 }
+
+export function PastQuizzesCard(props) {
+    console.log(props);
+
+    const { quizTitle, imgURL, quizDes } = props;
+
+    const handleClick = event => {
+        console.log("Would navigate to take quiz page!");
+    }
+
+    return (
+        <div className="col-12 col-md-6 col-lg-4 p-2">
+            <div className="card">
+                <div className="card-body">
+                    <img className="cardImgTop pb-3" src={imgURL} alt="pompompurin"/>
+                    <h3 className="card-title">{quizTitle}</h3>
+                    <p className="card-text">{quizDes}</p>
+                    <a className="btn customBtn" href="#" onClick={handleClick}>Take Quiz</a>
+                </div>
+            </div>
+        </div>
+    )
+}
