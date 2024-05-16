@@ -114,7 +114,7 @@ p {
     margin-bottom: 1em;
 }
 
-form {
+form-group {
     border-radius: 1rem;
     display: flex;
     flex-direction: row;
@@ -200,9 +200,16 @@ form {
 }
 
 /* createQuiz.html CSS */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .quizInfo, .quizQuestion, .submitButton {
-        margin: 1.25rem;
+        display: flex;
+        justify-content: left;
+        
+    }
+
+    .contentContainer {
+        margin-left: 27em;
+        margin-right: 27em;
     }
 
     html {
