@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import Question from './Question';
-import QUESTION_DATA from './data/SampleQuestions.json';
-import CHARACTER_DATA from './data/SampleCharacters.json';
-import QUIZ_DATA from './data/SampleQuiz.json'; 
 
-export function Quiz() {
+export function Quiz({ questionData, characterData, quizData }) {
     const [answers, setAnswers] = useState({});
     const [results, setResults] = useState(null);
     
@@ -29,7 +26,7 @@ export function Quiz() {
         });
 
         // Find the character with exact matching scores as the user
-        const matchedCharacter = CHARACTER_DATA.characters.find(character => {
+        const matchedCharacter = characterData.characters.find(character => {
             const characterScores = character.scores;
             return Object.keys(characterScores).every((personalityTrait) => {
                 return characterScores[personalityTrait] === userScores[personalityTrait];
@@ -37,20 +34,20 @@ export function Quiz() {
         });
 
         // Set the result character name or default if no exact match is found
-        const result = matchedCharacter ? matchedCharacter.name : CHARACTER_DATA.defaultCharacter;
+        const result = matchedCharacter ? matchedCharacter.name : characterData.defaultCharacter;
         setResults(result);
     };
 
     const renderQuestions = () => {
-        return QUESTION_DATA.map((question) => {
+        return questionData.map((question) => {
             return <Question key={question.id} question={question} onChange={handleOptionChange}/>
         })
     }
 
     return (
         <div className="mainContent">
-            <h1 className="quizHeader">{QUIZ_DATA.title}</h1>
-            <p className="quizDescription">{QUIZ_DATA.description}</p>
+            <h1 className="quizHeader">{quizData.title}</h1>
+            <p className="quizDescription">{quizData.description}</p>
             <div className="contentBox">
                 <form className="createForm" onSubmit={(e) => e.preventDefault()}>
                     {renderQuestions()}
