@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { CardList } from './QuizCards';
 import { SearchForm } from './SearchForm';
@@ -8,6 +8,12 @@ export function HomeHeader(props) {
     const handleClick = event => {
         console.log("Would navigate to create quiz page!");
     }
+
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleSearchChange = (value) => {
+        setSearchValue(value);
+    };
     
     return (
         <div className="homeMainContent">
@@ -19,8 +25,8 @@ export function HomeHeader(props) {
             <div className="buttonContainer">
                 <button type="button" className="btn customBtn" onClick={handleClick}>Create a Quiz</button>
             </div>
-            <SearchForm />
-            <CardList />
+            <SearchForm searchValue={searchValue} onSearchChange={handleSearchChange} />
+            <CardList searchValue={searchValue} />
         </div>
     );
 }
