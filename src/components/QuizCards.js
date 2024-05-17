@@ -20,7 +20,7 @@ export function QuizCard(props) {
     const { quizTitle, imgURL, quizDes } = props;
 
     const handleClick = event => {
-        console.log("Would navigate to take quiz page!");
+        console.log("Would navigate to create quiz page!");
     }
 
     return (

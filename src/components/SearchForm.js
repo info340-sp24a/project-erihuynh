@@ -16,15 +16,23 @@ export function SearchForm(props) {
     }
 
     return (
+        // <div className="searchContainer" onSubmit={handleSubmit}>
+        //     <h2>Begin Your Search</h2>
+        //     <form id="form">
+        //         <input type="search" id="query" name="q" placeholder="Search quizzes..." 
+        //         value={searchValue} 
+        //         onChange={handleChange}
+        //         aria-label="Search through personality/persona quizzes" />
+        //         <button type="submit">Search</button>
+        //     </form>
+        // </div>
         <div className="searchContainer" onSubmit={handleSubmit}>
             <h2>Begin Your Search</h2>
-            <form id="form">
-                <input type="search" id="query" name="q" placeholder="Search quizzes..." 
-                value={searchValue} 
-                onChange={handleChange}
-                aria-label="Search through personality/persona quizzes" />
-                <button type="submit">Search</button>
-            </form>
+            <div className="form-outline" data-mdb-input-init>
+                <input type="search" id="form1" className="form-control" placeholder="Search quizzes..." aria-label="Search through personality/persona quizzes"
+                value={searchValue}
+                onChange={handleChange} />
+            </div>
         </div>
     )
 }
