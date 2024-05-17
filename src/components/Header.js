@@ -14,7 +14,7 @@ export function Header() {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <nav className="navbar navbar-expand-lg navbar-dark navbarCustom">
                 <div className="container-fluid">
                     <a className={`navbar-brand ${activeLink === 'home' ? 'active' : ''}`} href="#" onClick={() => handleClick('home')}>Persona Playground</a>
                     <button className="navbar-toggler" type="button" onClick={handleNavCollapse} aria-controls="navbarNavAltMarkup" aria-expanded={!isNavCollapsed} aria-label="Toggle navigation">

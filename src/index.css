@@ -6,11 +6,29 @@ body {
     min-height: 100vh;
 }
 
-.navbar-custom {
+h1, h2 {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-weight: 700;
+    font-size: 3.5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+p {
+    font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+.navbarCustom {
     background-color: #4E4D95;
 }
 
-.footer-custom {
+.footerCustom {
     background-color: #4E4D95;
     color: white;
 }
@@ -21,7 +39,7 @@ footer p {
     margin-bottom: 0;
 }
 
-.gray-border {
+.grayBorder {
     border-color: gray;
 }
 
@@ -48,49 +66,32 @@ footer p {
     margin-bottom: 0;
 }
 
-h1, h2 {
-    font-family: 'M Plus Rounded 1c', sans-serif;
-    font-weight: 700;
-    font-size: 3.5em;
-    margin-top: 0.25em;
-    margin-bottom: 0.5em;
-}
-
-h3 {
-    font-family: 'M Plus Rounded 1c', sans-serif;
-    font-weight: 500;
-    font-size: 1em;
-}
-
-.quiz-header {
+.quizHeader {
     margin: 40px 50px 10px 50px;
     text-align: center;
     font-size: 40px;
 }
 
-.quiz-description {
+.quizDescription {
     text-align: center;
 }
 
-.question-options {
+.questionOptions {
     font-style: italic;
 }
 
-p {
-    font-family: 'Poppins', Helvetica, sans-serif;
-}
 
 .questionLabel {
     margin-top: 1em;
     margin-bottom: 1.5em;
 }
 
-.radio-container {
+.radioContainer {
     display: flex;
     align-items: baseline;
 }
 
-.radio-container input[type="radio"] {
+.radioContainer input[type="radio"] {
     margin-right: 5px; /* Adjust spacing between radio button and label */
 }
 

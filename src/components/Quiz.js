@@ -49,8 +49,8 @@ export function Quiz() {
 
     return (
         <div className="mainContent">
-            <h1 className="quiz-header">{QUIZ_DATA.title}</h1>
-            <p className="quiz-description">{QUIZ_DATA.description}</p>
+            <h1 className="quizHeader">{QUIZ_DATA.title}</h1>
+            <p className="quizDescription">{QUIZ_DATA.description}</p>
             <div className="contentBox">
                 <form className="createForm" onSubmit={(e) => e.preventDefault()}>
                     {renderQuestions()}

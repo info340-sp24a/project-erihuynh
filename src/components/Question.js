@@ -5,9 +5,9 @@ export default function Question({ question, onChange }) {
     const renderOptions = () => {
         return question.options.map((option, index) => {
             return (
-                <div key={index} className="radio-container">
+                <div key={index} className="radioContainer">
                     <input type="radio" id={`option-${question.id}-${index}`} name={`question${question.id}`} value={option.text} onChange={() => onChange(question.id, option.score)}/>
-                    <label htmlFor={`option-${question.id}-${index}`} className="question-options">{option.text}</label><br />
+                    <label htmlFor={`option-${question.id}-${index}`} className="questionOptions">{option.text}</label><br />
                 </div>
             );
         });
