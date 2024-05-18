@@ -17,7 +17,7 @@ export function Footer() {
                     <a href="#" className="nav-link px-2" style={{ color: 'white' }}>Sign in</a>
                 </li>
             </ul>
-            <p className="text-center">Made with love by Emily, Erica, Madelyn & Ryan</p>
+            <p className="text-center">©INFO340 Made with love by Emily, Erica, Madelyn & Ryan</p>
         </footer>
     );
 }
