@@ -9,8 +9,8 @@ import './index.css';
 function App() {
   return (
     <div>
-      {/* <Home /> */}
-      <TakeQuiz />
+      <Home />
+      {/* <TakeQuiz /> */}
       {/* { <Profile /> } */}
       {/* <CreateQuiz />  */}
       {/* <Results /> */}
