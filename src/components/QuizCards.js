@@ -8,23 +8,27 @@ export function CardList(props) {
         { quizTitle: "who's your ghibli persona?", quizDes: "inspired by Studio Ghibli films and characters", imgURL: "img/ponyo.jpg", imgAlt: "ponyo flying through sea" },
         { quizTitle: "what boba drink are you?", quizDes: "inspired by the boba cafes on the ave", imgURL: "img/boba.jpg", imgAlt: "polar bear drinking boba" },
     ];
+    
+    const filteredCards = cardArray.filter((card) => {
+        console.log(card);
+        console.log(searchValue);
+        return (card.quizTitle && typeof card.quizTitle === 'string' && card.quizTitle.toLowerCase().includes(searchValue.toLowerCase()));
+        });
 
-    const filteredCards = cardArray.filter(card => 
-        card.quizTitle && typeof card.quizTitle === 'string' && card.quizTitle.toLowerCase().includes(searchValue.toLowerCase())
-    );
+    let cards = filteredCards.map((card, index) => (
+        <QuizCard
+            key={index}
+            quizTitle={card.quizTitle}
+            quizDes={card.quizDes}
+            imgURL={card.imgURL}
+            imgAlt={card.imgAlt}
+        />
+    ))
 
     return (
         <div className="container">
             <div className="row justify-content-left">
-                {filteredCards.map((card, index) => (
-                    <QuizCard
-                        key={index}
-                        quizTitle={card.quizTitle}
-                        quizDes={card.quizDes}
-                        imgURL={card.imgURL}
-                        imgAlt={card.imgAlt}
-                    />
-                ))}
+                {cards}
             </div>
         </div>
     );

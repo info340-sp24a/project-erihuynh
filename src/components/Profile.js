@@ -25,7 +25,7 @@ function UserInfo({ userName, userEmail, userNumber }) {
     );
 }
 
-export function PastQuizzes({ results, cardInfo }) {
+function PastQuizzes({ results, cardInfo }) {
     return (
         <div className="d-flex align-items-center">
             {cardInfo.map((card, index) => (
@@ -78,7 +78,7 @@ export function Profile() {
                 <div className="container mb-5">
                     <h1>Your Quizzes</h1>
                 </div>
-                <CardList />
+                <CardList searchValue=""/>
             </div>
             <Footer />
         </div>
