@@ -28,9 +28,11 @@ export function Quiz({ questionData, characterData, quizData }) {
         // Find the character with exact matching scores as the user
         const matchedCharacter = characterData.characters.find(character => {
             const characterScores = character.scores;
-            return Object.keys(characterScores).every((personalityTrait) => {
+            const personalityTraits = Object.keys(characterScores);
+            let isMatch = personalityTraits.every((personalityTrait) => {
                 return characterScores[personalityTrait] === userScores[personalityTrait];
             });
+            return isMatch;
         });
 
         // Set the result character name or default if no exact match is found
@@ -39,10 +41,12 @@ export function Quiz({ questionData, characterData, quizData }) {
     };
 
     const renderQuestions = () => {
-        return questionData.map((question) => {
-            return <Question key={question.id} question={question} onChange={handleOptionChange}/>
-        })
-    }
+        const questionElements = questionData.map((question) => {
+            return <Question key={question.id} question={question} onChange={handleOptionChange} />;
+        });
+        return questionElements;
+    };
+    
 
     return (
         <div className="mainContent">

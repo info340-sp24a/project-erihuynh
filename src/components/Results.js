@@ -7,11 +7,11 @@ export function Results() {
     return (
         <div>
             <Header />
-            <div class="mainContent">
-                <h1 class="">Results</h1>
-                <div class="contentBox">
+            <div className="mainContent">
+                <h1>Results</h1>
+                <div className="contentBox">
                     <img src={EXAMPLE_IMAGE} alt="A cute Sanrio character called Pompompurin"/>
-                    <p class="characterName">
+                    <p className="characterName">
                         Pompompurin!
                     </p>
                     <p>
@@ -19,8 +19,8 @@ export function Results() {
                     </p>
                 </div>
             </div>
-            <div class="buttonContainer">
-                <button type="button" class="btn customBtn">Save to Profile</button>
+            <div className="buttonContainer">
+                <button type="button" className="btn customBtn">Save to Profile</button>
             </div>
             <Footer />
         </div>
