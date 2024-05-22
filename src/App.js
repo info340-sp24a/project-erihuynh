@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { TakeQuiz } from './components/TakeQuiz';
 import { Home } from './components/Home';
 import { Profile } from './components/Profile';
@@ -8,13 +9,14 @@ import './index.css';
 
 function App() {
   return (
-    <div>
-      {/* <Home /> */}
-      <TakeQuiz />
-      {/* { <Profile /> } */}
-      {/* <CreateQuiz />  */}
-      {/* <Results /> */}
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/take-quiz" element={<TakeQuiz />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/create-quiz" element={<CreateQuiz />} />
+      <Route path="/results" element={<Results />} />
+      <Route path="*" element={<Home />} />
+    </Routes>
   );
 }
 

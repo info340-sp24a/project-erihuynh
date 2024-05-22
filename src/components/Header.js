@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export function Header() {
-    const [activeLink, setActiveLink] = useState('home');
     const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-    
-    const handleClick = (link) => {
-        setActiveLink(link);
-    };
     
     const handleNavCollapse = () => {
         setIsNavCollapsed(!isNavCollapsed);
@@ -16,18 +12,28 @@ export function Header() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark navbarCustom">
                 <div className="container-fluid">
-                    <a className={`navbar-brand ${activeLink === 'home' ? 'active' : ''}`} href="#" onClick={() => handleClick('home')}>Persona Playground</a>
+                    <NavLink className="navbar-brand" to="/" exact>
+                        Persona Playground
+                    </NavLink>
                     <button className="navbar-toggler" type="button" onClick={handleNavCollapse} aria-controls="navbarNavAltMarkup" aria-expanded={!isNavCollapsed} aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a className={`nav-link ${activeLink === 'home' ? 'active' : ''}`} href="#" onClick={() => handleClick('home')}>Home</a>
-                            <a className={`nav-link ${activeLink === 'create-quiz' ? 'active' : ''}`} href="#" onClick={() => handleClick('create-quiz')}>Create Quiz</a>
-                            <a className={`nav-link ${activeLink === 'profile' ? 'active' : ''}`} href="#" onClick={() => handleClick('profile')}>Profile</a>
+                            <NavLink className="nav-link" to="/" exact>
+                                Home
+                            </NavLink>
+                            <NavLink className="nav-link" to="/create-quiz">
+                                Create Quiz
+                            </NavLink>
+                            <NavLink className="nav-link" to="/profile">
+                                Profile
+                            </NavLink>
                         </div>
                         <div className="navbar-nav ml-auto">
-                            <a className={`nav-link ${activeLink === 'signin' ? 'active' : ''}`} href="#" onClick={() => handleClick('signin')}>Sign In</a>
+                            <NavLink className="nav-link" to="/signin">
+                                Sign In
+                            </NavLink>
                         </div>
                     </div>
                 </div>
