@@ -7,6 +7,10 @@ import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 export function CreateQuiz() {
     const [quizTitle, setQuizTitle] = useState('');
     const [quizDesc, setQuizDesc] = useState('');
+    const [defaultCharacter, setDefaultCharacter] = useState({ name: '' });
+    const [characters, setCharacters] = useState([
+        { name: '', scores: { E: '', I: '', N: '', S: '', T: '', F: '', J: '', P: '' } }
+    ]);
 
     // old format
     // const [questions, setQuestions] = useState([
@@ -18,13 +22,6 @@ export function CreateQuiz() {
     // ]);
 
     // new formt to adjust for the correct data format that will be used in the quiz logic
-    // const [questions, setQuestions] = useState([
-    //     { id: 1, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })) },
-    //     { id: 2, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })) },
-    //     { id: 3, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })) },
-    //     { id: 4, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })) },
-    //     { id: 5, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })) },
-    // ]);
     const [questions, setQuestions] = useState([
         { id: 1, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })), image: null },
         { id: 2, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })), image: null },
@@ -55,6 +52,29 @@ export function CreateQuiz() {
         const newQuestions = [...questions];
         newQuestions[qIndex].options[optIndex].score[key] = value;
         setQuestions(newQuestions);
+    };
+
+    // new handle change for when character options are updated
+    const handleCharacterChange = (index, field, value) => {
+        const newCharacters = [...characters];
+        if (field in newCharacters[index].scores) {
+            newCharacters[index].scores[field] = value;
+        } else {
+            newCharacters[index][field] = value;
+        }
+        setCharacters(newCharacters);
+    };
+
+    // new handle change for the default character
+    const handleDefaultCharacterNameChange = (value) => {
+        setDefaultCharacter({ name: value });
+    };
+
+    // every time we click the add character button, we want it to rerender with another
+    // character to be available for editing which is why we add another empty character
+    // preset to the end of our current character list
+    const addCharacter = () => {
+        setCharacters([...characters, { name: '', scores: { E: '', I: '', N: '', S: '', T: '', F: '', J: '', P: '' } }]);
     };
 
     // old handleSubmission
@@ -99,11 +119,15 @@ export function CreateQuiz() {
                     score: option.score
                 })),
                 image: question.image
-            }))
+            })),
+            characters: characters.map(character => ({
+                name: character.name,
+                scores: character.scores
+            })),
+            defaultCharacter: defaultCharacter.name || 'Wait a second ... no match?',
         };
     };
 
-    // Before the return statement
     const questionInputs = questions.map((question, qIndex) => (
         <div key={question.id} className="mb-3">
             <div className="d-flex flex-column">
@@ -159,7 +183,35 @@ export function CreateQuiz() {
         </div>
     ));
 
-    // new adapted return statement with map function outside + handles new data format
+    const characterInputs = characters.map((character, index) => (
+        <div key={index} className="mb-3">
+            <div className="form-group mb-2">
+                <label htmlFor={`characterName${index}`}><strong>Character {index + 1}</strong></label>
+                <input
+                    type="text"
+                    className="form-control"
+                    id={`characterName${index}`}
+                    placeholder="Enter character name"
+                    value={character.name}
+                    onChange={(e) => handleCharacterChange(index, 'name', e.target.value)}
+                />
+            </div>
+            {Object.keys(character.scores).map((trait, idx) => (
+                <div key={idx} className="input-group mb-2">
+                    <span className="input-group-text" id={`characterTrait${trait}`}>{trait}</span>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id={`characterTrait${trait}`}
+                        placeholder={`${trait} personality trait score`}
+                        value={character.scores[trait]}
+                        onChange={(e) => handleCharacterChange(index, trait, e.target.value)}
+                    />
+                </div>
+            ))}
+        </div>
+    ));
+
     return (
         <div>
             <Header />
@@ -194,7 +246,27 @@ export function CreateQuiz() {
                                 onChange={(e) => setQuizDesc(e.target.value)}
                             />
                         </div>
+
                         {questionInputs}
+
+                        <div className="mb-3">
+                            <h3>Characters</h3>
+                            {characterInputs}
+                            <button type="button" className="btn customBtn" onClick={addCharacter}>Add Character</button>
+                        </div>
+
+                        <div className="mb-3">
+                            <label htmlFor="defaultCharacterName" className="form-label">Default Character Name</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="defaultCharacterName"
+                                placeholder="Enter default character name"
+                                value={defaultCharacter.name}
+                                onChange={(e) => handleDefaultCharacterNameChange(e.target.value)}
+                            />
+                        </div>
+
                         <div className="text-center">
                             <button type="submit" className="btn customBtn">Submit</button>
                         </div>
@@ -204,6 +276,7 @@ export function CreateQuiz() {
             <Footer />
         </div>
     );
+}
 
     // old return statement
     // return (
@@ -291,6 +364,5 @@ export function CreateQuiz() {
     //         <Footer />
     //     </div>
     // );
-}
 
 export default CreateQuiz;
