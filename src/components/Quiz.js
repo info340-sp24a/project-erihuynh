@@ -6,9 +6,32 @@ export function Quiz({ quizData }) {
     const [results, setResults] = useState(null);
     
     // Note that option score is an object (ex. "1": {"E": 2}, "2": {"I": 1}, etc.)
+    // const handleOptionChange = (questionId, optionScore) => {
+    //     setAnswers((prev) => {
+    //         return {...prev, [questionId]: optionScore};
+    //     });
+    // };
     const handleOptionChange = (questionId, optionScore) => {
+        // console.log(`handleOptionChange called with Question ID: ${questionId}, Option Score:`, {optionScore});
+        console.log('handleOptionChange called with Question ID:', questionId);
+        console.log('Option Score:', optionScore);
         setAnswers((prev) => {
-            return {...prev, [questionId]: optionScore};
+            const newAnswers = { ...prev };
+
+            if (newAnswers[questionId]) {
+                for (const [trait, score] of Object.entries(optionScore)) {
+                    if (newAnswers[questionId][trait]) {
+                        newAnswers[questionId][trait] += score;
+                    } else {
+                        newAnswers[questionId][trait] = score;
+                    }
+                }
+            } else {
+                newAnswers[questionId] = optionScore;
+            }
+
+            console.log("Updated Answers State:", newAnswers);
+            return newAnswers;
         });
     };
 
@@ -24,6 +47,8 @@ export function Quiz({ quizData }) {
                 userScores[key] += value;
             });
         });
+
+        console.log("User Scores:", userScores);
 
         // Find the character with exact matching scores as the user
         const matchedCharacter = quizData.characters.find(character => {
@@ -42,7 +67,7 @@ export function Quiz({ quizData }) {
 
     const renderQuestions = () => {
         const questionElements = quizData.questions.map((question, index) => (
-            <Question key={index} question={question} onChange={(optionScore) => handleOptionChange(index, optionScore)} />
+            <Question key={index} question={{ ...question, id: index }} onChange={(optionScore) => handleOptionChange(index, optionScore)} />
         ));
         return questionElements;
     };

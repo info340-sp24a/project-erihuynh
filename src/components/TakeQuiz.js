@@ -32,19 +32,6 @@ export function TakeQuiz() {
           return cleanup;
     }, [quizTitle]); // if the quizTitle ever changes, it will re-render
 
-    // old hard-coded data
-    // return (
-    //     <div>
-    //         <Header />
-    //         <Quiz 
-    //             questionData={QUESTION_DATA} 
-    //             characterData={CHARACTER_DATA} 
-    //             quizData={QUIZ_DATA} 
-    //         />
-    //         <Footer />
-    //     </div>
-    // );
-
     return (
         <div>
             <Header />
