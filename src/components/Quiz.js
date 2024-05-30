@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Question from './Question';
 
-export function Quiz({ questionData, characterData, quizData }) {
+export function Quiz({ quizData }) {
     const [answers, setAnswers] = useState({});
     const [results, setResults] = useState(null);
     
@@ -26,7 +26,7 @@ export function Quiz({ questionData, characterData, quizData }) {
         });
 
         // Find the character with exact matching scores as the user
-        const matchedCharacter = characterData.characters.find(character => {
+        const matchedCharacter = quizData.characters.find(character => {
             const characterScores = character.scores;
             const personalityTraits = Object.keys(characterScores);
             let isMatch = personalityTraits.every((personalityTrait) => {
@@ -36,17 +36,16 @@ export function Quiz({ questionData, characterData, quizData }) {
         });
 
         // Set the result character name or default if no exact match is found
-        const result = matchedCharacter ? matchedCharacter.name : characterData.defaultCharacter;
+        const result = matchedCharacter ? matchedCharacter.name : quizData.defaultCharacter;
         setResults(result);
     };
 
     const renderQuestions = () => {
-        const questionElements = questionData.map((question) => {
-            return <Question key={question.id} question={question} onChange={handleOptionChange} />;
-        });
+        const questionElements = quizData.questions.map((question, index) => (
+            <Question key={index} question={question} onChange={(optionScore) => handleOptionChange(index, optionScore)} />
+        ));
         return questionElements;
     };
-    
 
     return (
         <div className="mainContent">
