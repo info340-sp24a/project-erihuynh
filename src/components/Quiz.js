@@ -17,7 +17,7 @@ export function Quiz({ quizData }) {
         console.log('Option Score:', optionScore);
         setAnswers((prev) => {
             const newAnswers = { ...prev };
-
+            // this is just a diff format so ignore that it looks weird. just wanted to do some console.log statements
             if (newAnswers[questionId]) {
                 for (const [trait, score] of Object.entries(optionScore)) {
                     if (newAnswers[questionId][trait]) {
