@@ -25,9 +25,9 @@ function UserInfo({ userName, userEmail, userNumber }) {
     );
 }
 
-function PastQuizzes({ results, cardInfo }) {
+function PastQuizzesCard ({ results, cardInfo }) {
     return (
-        <div className="d-flex align-items-center">
+        <div className="d-flex flex-column flex-md-row align-items-center">
             {cardInfo.map((card, index) => (
                 <QuizCard 
                     key={index}
@@ -72,8 +72,8 @@ export function Profile() {
                     />
                 ))}
                 <div className="container mb-5">
-                    <h1>Past Quizzes</h1>
-                    <PastQuizzes results={results} cardInfo={cardInfo} />
+                    <h1>Past Quizzes and Results</h1>
+                    <PastQuizzesCard results={results} cardInfo={cardInfo} />
                 </div>
                 <div className="container mb-5">
                     <h1>Your Quizzes</h1>
