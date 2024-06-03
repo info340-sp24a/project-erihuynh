@@ -31,7 +31,7 @@ export function Header() {
                             </NavLink>
                         </div>
                         <div className="navbar-nav ml-auto">
-                            <NavLink className="nav-link" to="/signin">
+                            <NavLink className="nav-link" to="/sign-in">
                                 Sign In
                             </NavLink>
                         </div>
