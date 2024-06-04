@@ -1,11 +1,39 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 export function Header() {
     const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+    const [currentUser, setCurrentUser] = useState(null); // Manage current user state internally
+    const navigate = useNavigate();
     
+    useEffect(() => {
+        const authenticator = getAuth();
+        const unsubscribe = onAuthStateChanged(authenticator, (user) => {
+            setCurrentUser(user); // Set current user when auth state changes
+        });
+
+        return () => {
+            unsubscribe(); // Unsubscribe from auth state changes when component unmounts
+        };
+    }, []);
+
     const handleNavCollapse = () => {
         setIsNavCollapsed(!isNavCollapsed);
+    };
+
+    const authenticator = getAuth();
+
+    const handleSignOut = () => {
+        signOut(authenticator)
+            .then(() => {
+                // Sign-out successful.
+                navigate('/'); // Redirect to home or sign-in page
+            })
+            .catch((error) => {
+                // An error happened.
+                console.error('Error signing out:', error);
+            });
     };
 
     return (
@@ -31,9 +59,15 @@ export function Header() {
                             </NavLink>
                         </div>
                         <div className="navbar-nav ml-auto">
-                            <NavLink className="nav-link" to="/sign-in">
-                                Sign In
-                            </NavLink>
+                            {currentUser ? (
+                                <NavLink className="nav-link" to="/" onClick={handleSignOut}>
+                                    Sign Out
+                                </NavLink>
+                            ) : (
+                                <NavLink className="nav-link" to="/sign-in">
+                                    Sign In
+                                </NavLink>
+                            )}
                         </div>
                     </div>
                 </div>
