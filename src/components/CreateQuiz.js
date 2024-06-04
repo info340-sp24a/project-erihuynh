@@ -3,6 +3,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import '../index.css';
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
+import { getAuth } from 'firebase/auth'; 
 
 export function CreateQuiz() {
     const [quizTitle, setQuizTitle] = useState('');
@@ -19,6 +20,8 @@ export function CreateQuiz() {
         { id: 3, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })), image: null },
         { id: 4, text: '', options: ['', '', '', ''].map(text => ({ text, score: { personality: '', value: '' } })), image: null },
     ]);
+
+    const auth = getAuth(); // Get authentication instance
 
     const handleInputChange = (index, field, val) => {
         const newQuestions = [...questions];
