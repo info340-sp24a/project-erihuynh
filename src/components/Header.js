@@ -28,7 +28,7 @@ export function Header() {
         signOut(authenticator)
             .then(() => {
                 // Sign-out successful.
-                navigate('/'); // Redirect to home or sign-in page
+                navigate('/sign-in'); // Redirect to sign-in page
             })
             .catch((error) => {
                 // An error happened.
