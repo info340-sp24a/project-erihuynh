@@ -46,41 +46,71 @@ function PastQuizzesCard ({ results, cardInfo }) {
     );
 }
 
-export function Profile() {
-    const profiles = [
-        { userName: "EmilyHaoAreYou", userEmail: "emilyisdoinggreat@haoareyou.com", userNumber: "666-666-6666" },
-    ];
-
-    const results = [
-        { resultTitle: "Pompompurin", resultDesc: "Pompompurin is a character known for his endearing and gentle personality. He is friendly and caring like a golden retriever who loves to make others happy. He always wears his little brown beret on top of his head. He loves drinking milk and eating cream caramel pudding. His favorite words are 'let's go out' His least favorite word is 'stay'"},
-    ];
-
-    const cardInfo = [
-        { quizTitle: "who's your sanrio persona?", quizDesc: "inspired by the sanrio characters", imgURL: "img/results.png" },
-    ];
+export function Profile({ currentUser }) {
+    const { displayName, email, photoURL } = currentUser;
 
     return (
         <div>
             <Header />
             <div className="profileMainContent">
-                {profiles.map((profile, index) => (
-                    <UserInfo
-                        key={index}
-                        userName={profile.userName}
-                        userEmail={profile.userEmail}
-                        userNumber={profile.userNumber}
-                    />
-                ))}
-                <div className="container mb-5">
-                    <h1>Past Quizzes and Results</h1>
-                    <PastQuizzesCard results={results} cardInfo={cardInfo} />
+                <div className="container mt-5 mb-5">
+                    <div className="row align-items-center">
+                        <div className="col-auto">
+                            <img src={photoURL} alt="user profile" className="userImage img-fluid" />
+                        </div>
+                        <div className="col">
+                            <h1>{displayName}</h1>
+                            <div className="d-flex align-items-center">
+                                <p className="mb-0">{email}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="container mb-5">
-                    <h1>Your Quizzes</h1>
-                </div>
-                <CardList searchValue=""/>
+                {/* Add other profile content here */}
             </div>
             <Footer />
         </div>
     );
 }
+
+
+// export function Profile({ currentUser }) {
+//     console.log(currentUser);
+//     console.log("asdfasdfhasdkfhaksdlfaskdjfhlkasdjfhlasdkfjhalkhj");
+//     const profiles = [
+//         { userName: "EmilyHaoAreYou", userEmail: "emilyisdoinggreat@haoareyou.com", userNumber: "666-666-6666" },
+//     ];
+
+//     const results = [
+//         { resultTitle: "Pompompurin", resultDesc: "Pompompurin is a character known for his endearing and gentle personality. He is friendly and caring like a golden retriever who loves to make others happy. He always wears his little brown beret on top of his head. He loves drinking milk and eating cream caramel pudding. His favorite words are 'let's go out' His least favorite word is 'stay'"},
+//     ];
+
+//     const cardInfo = [
+//         { quizTitle: "who's your sanrio persona?", quizDesc: "inspired by the sanrio characters", imgURL: "img/results.png" },
+//     ];
+
+//     return (
+//         <div>
+//             <Header />
+//             <div className="profileMainContent">
+//                 {profiles.map((profile, index) => (
+//                     <UserInfo
+//                         key={index}
+//                         userName={profile.userName}
+//                         userEmail={profile.userEmail}
+//                         userNumber={profile.userNumber}
+//                     />
+//                 ))}
+//                 <div className="container mb-5">
+//                     <h1>Past Quizzes and Results</h1>
+//                     <PastQuizzesCard results={results} cardInfo={cardInfo} />
+//                 </div>
+//                 <div className="container mb-5">
+//                     <h1>Your Quizzes</h1>
+//                 </div>
+//                 <CardList searchValue=""/>
+//             </div>
+//             <Footer />
+//         </div>
+//     );
+// }
