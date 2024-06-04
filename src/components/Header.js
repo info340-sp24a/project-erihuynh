@@ -54,9 +54,9 @@ export function Header() {
                             <NavLink className="nav-link" to="/create-quiz">
                                 Create Quiz
                             </NavLink>
-                            <NavLink className="nav-link" to="/profile">
+                            {currentUser ? <NavLink className="nav-link" to="/profile">
                                 Profile
-                            </NavLink>
+                            </NavLink>  : <></>}
                         </div>
                         <div className="navbar-nav ml-auto">
                             {currentUser ? (

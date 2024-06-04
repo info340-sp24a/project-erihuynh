@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { CardList } from './QuizCards';
 import { QuizCard } from './QuizCards';
+import { getDatabase, ref, get, onValue } from "firebase/database";
+import { CardList } from "./UsersQuizzes" 
+
+import { getAuth } from 'firebase/auth'; 
 
 function UserInfo({ userName, userEmail, userNumber }) {
     return (
@@ -47,7 +50,26 @@ function PastQuizzesCard ({ results, cardInfo }) {
 }
 
 export function Profile({ currentUser }) {
+    // console.log(currentUser)
     const { displayName, email, photoURL } = currentUser;
+    const cards = null;
+    let usersCards = [];
+    
+    const auth = getAuth();
+    console.log(auth.currentUser.uid);
+    const db = getDatabase();
+    const quizzesRef = ref(db, "quizzes");
+    let quizzesValue = null;
+    onValue(quizzesRef, (snapshot) => {
+        quizzesValue = snapshot.val();
+        console.log(quizzesValue);
+    });
+    console.log(quizzesValue);
+
+    // quizzesRef.forEach(
+        
+    // )
+
 
     return (
         <div>
@@ -68,6 +90,7 @@ export function Profile({ currentUser }) {
                 </div>
                 {/* Add other profile content here */}
             </div>
+            <CardList />
             <Footer />
         </div>
     );

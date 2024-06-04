@@ -22,6 +22,7 @@ export function CreateQuiz() {
     ]);
 
     const auth = getAuth(); // Get authentication instance
+    console.log(auth.currentUser.uid);
 
     const handleInputChange = (index, field, val) => {
         const newQuestions = [...questions];
@@ -107,6 +108,7 @@ export function CreateQuiz() {
                 scores: character.scores
             })),
             defaultCharacter: defaultCharacter.name || 'Wait a second ... no match?',
+            creator: auth.currentUser.uid
         };
     };
 
